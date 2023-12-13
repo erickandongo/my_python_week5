@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Your Objectives{% endblock %}
+
+{% block content %}
+    {% if objective_list %}
+        <ul>
+        {% for objective in objective_list %}
+            <li><a href="/objectives/{{ objective.id }}/">{{ objective.title }}</a></li>
+        {% endfor %}
+        </ul>
+        {% else %}
+            <p>No objective found.</p>
+    {% endif %}
+{% endblock%}
